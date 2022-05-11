@@ -3,7 +3,7 @@ const AbortController = require('abort-controller')
 // const HttpsProxyAgent = require('https-proxy-agent')
 
 
-let proxyConfiga = {}
+let proxyConfig = {}
 
 // if (process.env.isKscSdkTest) {
     // 本地代理
