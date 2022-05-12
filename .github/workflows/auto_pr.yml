@@ -1,0 +1,18 @@
+name: auto_pr
+
+on:
+  push:
+    branches:
+      - trunk
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git config --global pull.ff only
+      - run: git pull
+      - run: gh pr create --base master --title auto_pr --body auto_pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
