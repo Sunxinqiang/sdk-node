@@ -1,5 +1,5 @@
 # 检测到trunk分支的推送，自动提pr
-name: auto_pr
+name: 自动提PR
 
 on:
   push:

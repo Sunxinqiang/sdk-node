@@ -1,5 +1,5 @@
 # 检测到PR合并，自动打包、创建tag、创建release并发布npm
-name: auto_publish
+name: PR合并自动发布
 
 on:
   pull_request:
