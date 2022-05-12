@@ -1,14 +1,10 @@
-# 检测到PR合并，自动打包、创建tag、创建release并发布npm
-name: auto_publish
+# 手动触发，打包、打tag、创建release并发布npm
+name: manual_publish
 
 on:
-  pull_request:
-    branches: [ main ]
-    types:
-      - closed
+  workflow_dispatch:
 jobs:
   build_publish:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +19,7 @@ jobs:
       - run: npm i
       - run: npm run test
       - run: npm run build
-      - run: git add . && git commit -m 'auto_publish' || echo 'no source code change !!'
+      - run: git add . && git commit -m 'auto_publish' || echo 'no update!'
       - run: npm version patch
       - run: gh release create $(git describe --tags `git rev-list --tags --max-count=1`) --generate-notes
         env:
