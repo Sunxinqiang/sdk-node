@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     types:
       - closed
-
+  workflow_dispatch:
 jobs:
   build_publish:
     if: github.event.pull_request.merged == true
