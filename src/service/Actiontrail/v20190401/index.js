@@ -5,7 +5,7 @@ module.exports = class Client extends BaseClient {
         'protocol': 'http://',
         'endpoint': 'actiontrail.api.ksyun.com',
         'config': {
-            'timeout': 60,  //设置timeout
+            'timeout': 61,  //设置timeout
             'headers': {
                 'Accept': 'application/json'
             },
