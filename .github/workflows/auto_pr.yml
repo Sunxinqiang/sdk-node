@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: gh pr create --base main --fill
+      - run: gh pr create --base main --title auto_pr --body $(git log -1 --pretty=format:'%s')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
